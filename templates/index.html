@@ -44,7 +44,6 @@
     <div id="result"></div>
 
     <script>
-        // Access webcam
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => {
                 document.getElementById('video').srcObject = stream;
@@ -53,7 +52,6 @@
                 console.error('Error accessing webcam:', err);
             });
 
-        // Send video frames to server
         const canvas = document.getElementById('canvas');
         const context = canvas.getContext('2d');
         const video = document.getElementById('video');
@@ -76,8 +74,6 @@
                 .catch(err => console.error('Error sending frame:', err));
             });
         }
-
-        // Send frame every second
         setInterval(sendFrame, 1000);
     </script>
 </body>
