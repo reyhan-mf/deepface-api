@@ -1,4 +1,3 @@
-// Access webcam
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(stream => {
         document.getElementById('video').srcObject = stream;
@@ -29,6 +28,4 @@ function sendFrame() {
         .catch(err => console.error('Error sending frame:', err));
     });
 }
-
-// Send frame every second
 setInterval(sendFrame, 1000);
